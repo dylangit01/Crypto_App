@@ -9,8 +9,8 @@ import { useGetCryptosQuery } from '../services/cryptoApi';
 const { Title } = Typography;
 
 const Homepage = () => {
-	// Use redux hook syntax is simple:
-	const { data, isFetching } = useGetCryptosQuery(); 
+	// Use redux hook syntax is simple, and the parameter '10' is from Cryptocurrencies count variable
+	const { data, isFetching } = useGetCryptosQuery(10); 
 	const globalStats = data?.data?.stats;
 	if(isFetching) return 'Loading...'
 
@@ -38,15 +38,15 @@ const Homepage = () => {
 			</Row>
 			<div className="home-heading-container">
 				<Title level={2} className='home-title'> Top 10 Cryptocurrencies in the world </Title>
-				<Title level={3} className='show-more'> <Link to='/cryptocurrencies'>Show more</Link> </Title>
+				<Title level={3} className='show-more'> <Link to='/cryptocurrencies'>Show more</Link></Title>
 			</div>
-			<Cryptocurrencies />
+			<Cryptocurrencies simplified/>
 
 			<div className="home-heading-container">
 				<Title level={2} className='home-title'> Latest Crypto News </Title>
 				<Title level={3} className='show-more'> <Link to='/news'>Show more</Link> </Title>
 			</div>
-			<News />
+			<News simplified/>
 		</>
 	);
 }
