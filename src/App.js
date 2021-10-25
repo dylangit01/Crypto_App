@@ -4,6 +4,8 @@ import { Layout, Typography, Space } from 'antd';
 import { Navbar, Homepage, Exchanges, Cryptocurrencies, CryptoDetails, News } from './components';
 import './App.css';
 
+const { Title } = Typography;
+
 const App = () => {
 	return (
 		<Router>
@@ -40,10 +42,10 @@ const App = () => {
 						</div>
 					</Layout>
 					<div className='footer'>
-						<Typography.Title level={5} style={{ color: '#fff', textAlign: 'center' }}>
+						<Title level={5} style={{ color: '#fff', textAlign: 'center' }}>
 							CryptoMarket <br />
 							All rights reserved.
-						</Typography.Title>
+						</Title>
 						<Space>
 							<Link to='/'>Home</Link>
 							<Link to='/exchanges'>Exchanges</Link>
